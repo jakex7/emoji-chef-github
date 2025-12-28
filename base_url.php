@@ -1,0 +1,5 @@
+<?php
+define('BASE_URL', 'http://frog01.mikr.us:20169/');
+// define('GITHUB_URL', 'http://frog01.mikr.us:20169/');
+define('GITHUB_URL', 'https://github.com/jakex7/emoji-chef-github/');
+?>
