@@ -1,24 +1,45 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 include 'base_url.php';
 
+// Validate emoji code against whitelist of allowed files
+function getValidEmojiCodes() {
+    $codes = array();
+    $combinationsDir = __DIR__ . DIRECTORY_SEPARATOR . 'combinations';
+    
+    if (is_dir($combinationsDir)) {
+        $files = scandir($combinationsDir);
+        foreach ($files as $file) {
+            if ($file !== '.' && $file !== '..' && pathinfo($file, PATHINFO_EXTENSION) === 'json') {
+                $codes[] = pathinfo($file, PATHINFO_FILENAME);
+            }
+        }
+    }
+    return $codes;
+}
+
+$validCodes = getValidEmojiCodes();
+
 if (isset($_GET['left'])) {
-    $left = preg_replace('/[^a-f0-9\-]/', '', $_GET['left']);
-    if (file_put_contents('left.txt', $left) === false) {
-        // Print the last error occurred
-        $error = error_get_last();
-        die("Failure: " . $error['message']);
+    $left = basename($_GET['left']);
+    $left = preg_replace('/[^a-f0-9\-]/', '', $left);
+    
+    if (!empty($left) && in_array($left, $validCodes, true)) {
+        if (file_put_contents('left.txt', $left) === false) {
+            http_response_code(500);
+            exit;
+        }
     }
 }
 
 if (isset($_GET['right'])) {
-    $right = preg_replace('/[^a-f0-9\-]/', '', $_GET['right']);
-    if (file_put_contents('right.txt', $right) === false) {
-        // Print the last error occurred
-        $error = error_get_last();
-        die("Failure: " . $error['message']);
+    $right = basename($_GET['right']);
+    $right = preg_replace('/[^a-f0-9\-]/', '', $right);
+    
+    if (!empty($right) && in_array($right, $validCodes, true)) {
+        if (file_put_contents('right.txt', $right) === false) {
+            http_response_code(500);
+            exit;
+        }
     }
 }
 
