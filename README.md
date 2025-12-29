@@ -1,7 +1,7 @@
-<!-- <img src="http://frog01.mikr.us:20169/" alt="test"> -->
-
 <details>
-<summary>left</summary>
+<summary>Emoji composer</summary>
+<details>
+<summary>Primary</summary>
 <a href="http://frog01.mikr.us:20169/set.php?left=1fa84" title="1fa84">🪄</a>
 <a href="http://frog01.mikr.us:20169/set.php?left=1f600" title="1f600">😀</a>
 <a href="http://frog01.mikr.us:20169/set.php?left=1f603" title="1f603">😃</a>
@@ -625,7 +625,7 @@
 </details>
 
 <details>
-<summary>right</summary>
+<summary>Secondary</summary>
 <a href="http://frog01.mikr.us:20169/set.php?right=1fa84" title="1fa84">🪄</a>
 <a href="http://frog01.mikr.us:20169/set.php?right=1f600" title="1f600">😀</a>
 <a href="http://frog01.mikr.us:20169/set.php?right=1f603" title="1f603">😃</a>
@@ -1248,4 +1248,6 @@
 <a href="http://frog01.mikr.us:20169/set.php?right=1f4ac" title="1f4ac">💬</a>
 </details>
 
-<img src="http://frog01.mikr.us:20169/combined.php" alt="test">
+<img src="http://frog01.mikr.us:20169/combined.php" alt="test" width="100">
+
+</details>
