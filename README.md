@@ -1,5 +1,8 @@
 <details>
 <summary>Emoji composer</summary>
+
+<br /><a href="https://github.com/jakex7/emoji-chef-github/">Source code</a><br />
+
 <details>
 <summary>Primary</summary>
 <a href="http://frog01.mikr.us:20169/set.php?left=1fa84" title="1fa84">🪄</a>
